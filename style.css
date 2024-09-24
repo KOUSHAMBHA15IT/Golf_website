@@ -1,0 +1,295 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'montserrat';
+    box-sizing: border-box;
+    color: #fff;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+#cursor{
+    height: 24px;
+    width: 24px;
+    background-color: rgb(140, 206, 17);
+    border-radius: 50%;
+    position: fixed;
+    z-index: 999;
+}
+#cursor-blur{
+    height: 400px;
+    width: 400px;
+    background-color: rgba(198, 241, 117, 0.258);
+    border-radius: 50%;
+    position: fixed;
+    filter: blur(40px);
+    z-index: 9;
+
+}
+#nav{
+    height:140px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 150px;
+    gap: 55px;
+    position: fixed;
+    justify-content: flex-start;
+    
+    z-index: 99;
+}
+#nav img{
+    height: 70px;
+}
+#nav h4{
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+}
+video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+
+#main{
+    position: relative;
+    background-color: rgba(16, 14, 14, 0.349);
+}
+#page1{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+}
+#page1 h1{
+    font-size: 140px;
+    font-weight: 900;
+    position: relative;
+}
+
+
+#page1 h1::before{
+    content: "EAT. DRINK. PLAY.";
+    position: absolute;
+    color: rgb(41, 35, 35);
+    top: -6px;
+    left: -6px;
+    -webkit-text-stroke: 3px greenyellow;
+    z-index: -1;
+}
+#page1 h2{
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#page1 p{
+    font-size: 18px;
+    font-weight: 400;
+    width: 40%;
+}
+
+#page2{
+    min-height: 100vh;
+    width: 100%;
+    z-index: 10;
+}
+#scroller{
+    /* background-color: aqua; */
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+    margin-bottom: 120px;
+}
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+#scroller-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#scroller h4{
+    display: inline-block;
+    color: transparent;
+    font-size: 120px;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-right: 10px;
+    -webkit-text-stroke: 2px #ffffff;
+
+}
+#scroller :hover{
+    color: #b1ff53;
+    -webkit-text-stroke: 3px black;
+}
+
+@keyframes scroll{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+#abt{
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    padding: 0 40px;
+}
+#abt img{
+    height: 150px;
+    width: 150px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+#abt-in{
+    width: 40%;
+    text-align: center;
+}
+#abt h3{
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+#abt h2{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+#card-con{
+    /* background-color: #fff; */
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 50px;
+    position: relative;
+    z-index: 10;
+}
+
+.card{
+    height: 80%;
+    width: 18%;
+    border-radius: 22px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: all ease 0.8s;
+}
+#card1{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-ag.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+#card2{
+    background-image: url(https://images.unsplash.com/photo-1591491698714-9631092f6c4f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Z29sZnxlbnwwfHwwfHx8MA%3D%3D);
+}
+#card3{
+    background-image: url(https://media.istockphoto.com/id/949431710/photo/hand-hold-golf-ball-with-tee-on-golf-course.webp?a=1&b=1&s=612x612&w=0&k=20&c=hsIgFcwaas6CScUJi6x54CfcJ6bYJD2NCs9XoXlR_J0=);
+}
+
+/* @property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+#card2::after, #card2::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle),#026202,#517405,#d7ef88) ;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 9;
+    border-radius: 22px;
+    animation: 1s spin linear infinite;
+}
+#card2::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+#card2:hover{
+    opacity: 0;
+}
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle:360deg
+    }
+} */
+
+#overlay{
+    height: 100%;
+    width: 100%;
+    background-color: #b1ff53;
+    padding-top: 100px;
+    padding: 45px;
+    opacity: 0;
+    transition: all ease 0.8s;
+}
+#overlay h4{
+    color: black;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 20px;
+    white-space: nowrap;
+}
+#overlay p{
+    color: black;
+    font-size: 12px;
+}
+.card #overlay:hover{
+    opacity: 1;
+}
+.card:hover{
+    transform: rotate3d(1,1,0,40deg);
+    box-shadow: 0 0 20px rgba(160, 255, 7, 0.6), 0 0 40px rgba(69, 122, 4, 0.495), 0 0 60px rgba(10, 241, 18, 0.2);
+}
+#green{
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to left bottom,rgb(156, 245, 31),green);
+}
+#green h4{
+    width: 45%;
+    line-height: 40px;
+    text-align: center;
+    color: black;
+    font-weight: 900;
+    font-size: 26px;
+    text-transform: uppercase;
+}
+#green img{
+    height: 100%;
+    object-fit: cover;
+    width: 11%;
+}
